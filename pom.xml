@@ -114,7 +114,12 @@
 										<taskdef resource="com/sencha/ant/antlib.xml"
 											classpath="${cmd.dir}/sencha.jar" loaderref="senchaloader" />
 										<x-sencha-command dir="${webapp}">
-											generate app -ext asms3 ./
+											generate 
+											app 
+											-ext 
+											-n=${project.name} 
+											-p=${webapp}
+											-th=${sencha.theme} 
 										</x-sencha-command>
 									</target>
 								</configuration>
