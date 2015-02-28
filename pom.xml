@@ -94,6 +94,38 @@
 	<profiles>
 
 		<profile>
+			<!-- after checkout, run this to generate sencha ext js application files -->
+			<id>sencha-dev-install</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.8</version>
+						<executions>
+							<execution>
+								<!-- full ext app build -->
+								<id>sencha-app-build</id>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<taskdef resource="com/sencha/ant/antlib.xml"
+											classpath="${cmd.dir}/sencha.jar" loaderref="senchaloader" />
+										<x-sencha-command dir="${webapp}">
+											generate app -ext asms3 ./
+										</x-sencha-command>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
 			<id>sencha-webapp</id>
 			<build>
 				<plugins>
