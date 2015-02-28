@@ -5,4 +5,8 @@
 /bootstrap.json
 /build.xml
 /.sencha/
-/packages/
+/sass/
+/app.js
+/app.json
+/index.html
+

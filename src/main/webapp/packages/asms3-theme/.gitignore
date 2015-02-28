@@ -1,0 +1,10 @@
+/.sencha/
+/build/
+/docs/
+/examples/
+/licenses/
+/overrides/
+/resources/
+/sass/
+/build.xml
+/package.json

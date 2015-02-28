@@ -16,7 +16,7 @@
 		<!-- one of production|testing|native|package (http://docs-origin.sencha.com/cmd/5.x/advanced_cmd/cmd_reference.html#sencha_app_build) -->
 		<sencha.env>testing</sencha.env>
 		<sencha.base.theme>ext-theme-crisp</sencha.base.theme>
-		<sencha.asms3.theme>ext-theme-crisp</sencha.asms3.theme>
+		<sencha.asms3.theme>asms3-theme</sencha.asms3.theme>
 	</properties>
 
 	<dependencies>
@@ -105,7 +105,30 @@
 						<executions>
 							<execution>
 								<!-- full ext app build -->
-								<id>sencha-app-build</id>
+								<id>sencha-generate-app</id>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<taskdef resource="com/sencha/ant/antlib.xml"
+											classpath="${cmd.dir}/sencha.jar" loaderref="senchaloader" />
+										<x-sencha-init />
+										<x-sencha-command dir="${webapp}">
+											generate
+											app
+											-ext
+											-n=${project.name}
+											-p=${webapp}
+											-th=${sencha.base.theme}
+										</x-sencha-command>
+									</target>
+								</configuration>
+							</execution>
+							<execution>
+								<!-- full ext app build -->
+								<id>sencha-generate-theme</id>
 								<phase>process-resources</phase>
 								<goals>
 									<goal>run</goal>
@@ -116,17 +139,9 @@
 											classpath="${cmd.dir}/sencha.jar" loaderref="senchaloader" />
 										<x-sencha-command dir="${webapp}">
 											generate
-											app
-											-ext
-											-n=${project.name}
-											-p=${webapp}
-											-th=${sencha.base.theme}
-										</x-sencha-command>
-										<x-sencha-command dir="${webapp}">
-											generate 
-											theme 
-											-e=${sencha.base.theme}
+											theme
 											-n=${sencha.asms3.theme}
+											-e=${sencha.base.theme}
 										</x-sencha-command>
 									</target>
 								</configuration>
@@ -138,7 +153,57 @@
 		</profile>
 
 		<profile>
-			<id>sencha-webapp</id>
+			<id>compile-sass</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.8</version>
+						<executions>
+							<execution>
+								<!-- full ext app build -->
+								<id>compile-sass</id>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<taskdef resource="com/sencha/ant/antlib.xml"
+											classpath="${cmd.dir}/sencha.jar" loaderref="senchaloader" />
+										<x-sencha-command dir="${webapp}/packages/${sencha.asms3.theme}">
+											package
+											build
+										</x-sencha-command>
+									</target>
+								</configuration>
+							</execution>
+							<execution>
+								<!-- app refresh after sass compile -->
+								<id>sencha-app-refresh</id>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<taskdef resource="com/sencha/ant/antlib.xml"
+											classpath="${cmd.dir}/sencha.jar" loaderref="senchaloader" />
+										<x-sencha-command dir="${webapp}">
+											app
+											refresh
+										</x-sencha-command>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>sencha-webapp-release</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -215,7 +280,7 @@
 					<execution>
 						<!-- full ext app build -->
 						<id>sencha-app-build</id>
-						<phase>process-resources</phase>
+						<phase>compile</phase>
 						<goals>
 							<goal>run</goal>
 						</goals>
