@@ -15,7 +15,8 @@
 		<sencha.webapp.output.dir>${project.build.directory}\sencha-webapp</sencha.webapp.output.dir>
 		<!-- one of production|testing|native|package (http://docs-origin.sencha.com/cmd/5.x/advanced_cmd/cmd_reference.html#sencha_app_build) -->
 		<sencha.env>testing</sencha.env>
-		<sencha.theme>ext-theme-crisp</sencha.theme>
+		<sencha.base.theme>ext-theme-crisp</sencha.base.theme>
+		<sencha.asms3.theme>ext-theme-crisp</sencha.asms3.theme>
 	</properties>
 
 	<dependencies>
@@ -114,12 +115,18 @@
 										<taskdef resource="com/sencha/ant/antlib.xml"
 											classpath="${cmd.dir}/sencha.jar" loaderref="senchaloader" />
 										<x-sencha-command dir="${webapp}">
-											generate 
-											app 
-											-ext 
-											-n=${project.name} 
+											generate
+											app
+											-ext
+											-n=${project.name}
 											-p=${webapp}
-											-th=${sencha.theme} 
+											-th=${sencha.base.theme}
+										</x-sencha-command>
+										<x-sencha-command dir="${webapp}">
+											generate 
+											theme 
+											-e=${sencha.base.theme}
+											-n=${sencha.asms3.theme}
 										</x-sencha-command>
 									</target>
 								</configuration>
