@@ -9,7 +9,12 @@ Ext.define('asms3.view.navigation.Navigation', {
 		type : 'navigation'
 	},
 	bind : {
-		store : '{navigation}'
+		store : '{navigation}',
+		title : '{name}'
+	},
+
+	listeners : {
+		select : 'onSelect'
 	},
 
 	closable : false,

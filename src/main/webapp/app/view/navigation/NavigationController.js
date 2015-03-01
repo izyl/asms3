@@ -17,7 +17,13 @@ Ext.define('asms3.view.navigation.NavigationController', {
 
 	onConfirm : function(choice) {
 		if (choice === 'yes') {
-			//
+			// todo : destroy session, destroy main, show login
 		}
+	},
+
+	onSelect : function(treepanel, record, index, eOpts) {
+		// bring selected view on top
+		console.log('onSelect ' + record);
+		this.fireViewEvent('selectNode', this.getView(), record.text);
 	}
 });

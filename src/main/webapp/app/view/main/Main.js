@@ -20,25 +20,5 @@ Ext.define('asms3.view.main.Main', {
 
     layout: {
         type: 'border'
-    },
-
-    items: [{
-        xtype: 'navigation',
-        ui: 'highlight-framed',
-        margin : 10,
-        bind: {
-            title: '{name}'
-        },
-        region: 'west',
-        width: 250,
-        split: true
-    },{
-        region: 'center',
-        xtype: 'tabpanel',
-        items:[{
-            title: 'Tab 1',
-            padding : 10,
-            html: '<h2>Content appropriate for the current navigation.</h2>'
-        }]
-    }]
+    }
 });

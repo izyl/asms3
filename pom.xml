@@ -153,7 +153,7 @@
 		</profile>
 
 		<profile>
-			<id>compile-sass</id>
+			<id>refresh-theme</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -203,7 +203,7 @@
 		</profile>
 
 		<profile>
-			<id>sencha-webapp-release</id>
+			<id>sencha-webapp-war</id>
 			<build>
 				<plugins>
 					<plugin>

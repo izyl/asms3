@@ -13,7 +13,6 @@ Ext.define('asms3.controller.Root', {
     ],
     
     models: ['User', 'NavigationNode'],
-    
     stores : ['Navigation'],
     
     loadingText: 'Loading...',
@@ -64,5 +63,10 @@ Ext.define('asms3.controller.Root', {
     
     getSession: function() {
         return this.session;
+    },
+    
+    onSelectNode : function(requestedViewId){
+    	console.log('selected node ' + requestedViewId);
+    	this.viewport.showView(requestedViewId)
     }
 });

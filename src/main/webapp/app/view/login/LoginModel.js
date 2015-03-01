@@ -10,7 +10,5 @@ Ext.define('asms3.view.login.LoginModel', {
 	// in a real app.
 	data : {
 		username : 'Don'
-	},
-
-	stores : {}
+	}
 });
