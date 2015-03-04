@@ -1,8 +1,5 @@
 /**
- * This class is the main view for the application. It is specified in app.js as the "autoCreateViewport" property. That setting automatically applies the
- * "viewport" plugin to promote that instance of this class to the body element.
- * 
- * TODO - Replace this content of this view to suite the needs of your application.
+ * This class is the viewport : the main view for the application. 
  */
 Ext.define('asms3.view.main.MainController', {
 	extend : 'Ext.app.ViewController',
@@ -15,33 +12,48 @@ Ext.define('asms3.view.main.MainController', {
 	init : function() {
 
 		this.getView().add([ {
-	        xtype: 'navigation',
-	        ui: 'highlight-framed',
-	        margin : 10,
-	        bind: {
-	            title: '{name}'
-	        },
-	        region: 'west',
-	        width: 250,
-	        split: true
-		}, {
 			region : 'center',
-			xtype : 'tabpanel',
-			items : [ {
-				title : 'Tab 1',
-				padding : 10,
-				html : '<h2>Content appropriate for the current navigation.</h2>'
-			} ]
-		} ]);
+			xtype : 'panel',
 
+			tbar : [ {
+				text : 'logoff'
+			} ]
+
+		}, {
+			xtype : 'window',
+			id : 'test',
+			title : 'Hello',
+			height : 200,
+			width : 400,
+			layout : 'fit',
+			closeAction : 'hide',
+			items : {
+				xtype : 'navigation',
+				ui : 'highlight-framed',
+				margin : 10,
+				bind : {
+					title : '{name}'
+				},
+				region : 'west',
+				width : 250,
+				split : true,
+
+				listeners : {
+					scope : this,
+					selectNode : 'onSelectNode'
+				}
+			}
+		} ]);
+		Ext.getCmp('test').show();
+	},
+
+	onSelectNode : function(node) {
+		console.log('main select node ' + node);
 	},
 
 	showView : function(viewId) {
-		var view = views.get(requestedViewId);
-		if (Ext.isEmpty(view)) {
-			views.put(viewId, createView(viewId));
-		}
-		view.setVisible(true);
+		console.log('show view ' + viewId);
+		Ext.getCmp('test').show();
 	},
 
 	alias : 'controller.main'

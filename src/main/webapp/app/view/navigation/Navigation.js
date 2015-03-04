@@ -1,9 +1,9 @@
 Ext.define('asms3.view.navigation.Navigation', {
 	extend : 'Ext.tree.Panel',
+	xtype : 'navigation',
 
 	requires : [ 'asms3.view.navigation.NavigationController', 'asms3.view.navigation.NavigationModel', 'Ext.form.Panel', 'Ext.button.Button',
 			'Ext.form.field.Text', 'Ext.form.field.ComboBox' ],
-	xtype : 'navigation',
 	controller : 'navigation',
 	viewModel : {
 		type : 'navigation'
@@ -18,9 +18,7 @@ Ext.define('asms3.view.navigation.Navigation', {
 	},
 
 	closable : false,
-
-	tbar : [ {
-		text : 'Button',
-		handler : 'onClickButton'
-	} ]
+	
+	ui : 'highlight',
+	bodyCls : 'content-panel-body'
 });

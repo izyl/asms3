@@ -32,7 +32,8 @@ Ext.define('asms3.controller.Root', {
             autoShow: true,
             listeners: {
                 scope: this,
-                login: 'onLogin'
+                login: 'onLogin',
+                selectNode : 'onSelectNode'
             }
         });
     },
