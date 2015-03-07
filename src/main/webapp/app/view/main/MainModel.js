@@ -7,7 +7,8 @@ Ext.define('asms3.view.main.MainModel', {
     alias: 'viewmodel.main',
 
     data: {
-        name: 'asms3'
+        name: 'asms3',
+        navigationTitle : 'Navigate to asms3'
     }
 
     //TODO - add data, formulas and/or methods to support your view

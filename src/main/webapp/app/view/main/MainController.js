@@ -1,5 +1,5 @@
 /**
- * This class is the viewport : the main view for the application. 
+ * This class is the viewport : the main view for the application.
  */
 Ext.define('asms3.view.main.MainController', {
 	extend : 'Ext.app.ViewController',
@@ -10,45 +10,7 @@ Ext.define('asms3.view.main.MainController', {
 	views : new Ext.util.MixedCollection(),
 
 	init : function() {
-
-		this.getView().add([ {
-			region : 'center',
-			xtype : 'panel',
-
-			tbar : [ {
-				text : 'logoff'
-			} ]
-
-		}, {
-			xtype : 'window',
-			id : 'test',
-			title : 'Hello',
-			height : 200,
-			width : 400,
-			layout : 'fit',
-			closeAction : 'hide',
-			items : {
-				xtype : 'navigation',
-				ui : 'highlight-framed',
-				margin : 10,
-				bind : {
-					title : '{name}'
-				},
-				region : 'west',
-				width : 250,
-				split : true,
-
-				listeners : {
-					scope : this,
-					selectNode : 'onSelectNode'
-				}
-			}
-		} ]);
-		Ext.getCmp('test').show();
-	},
-
-	onSelectNode : function(node) {
-		console.log('main select node ' + node);
+		console.log('init main');
 	},
 
 	showView : function(viewId) {

@@ -9,7 +9,9 @@ Ext.define('asms3.controller.Root', {
         'asms3.view.login.Login',
         'asms3.view.main.Main',
         'asms3.view.navigation.Navigation',
+        'asms3.view.header.Header',
         'asms3.LoginManager'
+        
     ],
     
     models: ['User', 'NavigationNode'],

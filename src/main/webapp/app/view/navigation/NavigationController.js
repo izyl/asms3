@@ -10,9 +10,10 @@ Ext.define('asms3.view.navigation.NavigationController', {
 	requires : [ 'Ext.window.MessageBox' ],
 
 	alias : 'controller.navigation',
-
-	onSelect : function(treepanel, record, index, eOpts) {
-		// bring selected view on top
+	
+	onSelect : function(reepanel, record, index, eOpts) {
+		console.log('main select node ' + record);
 		this.fireViewEvent('selectNode', this.getView(), record.text);
 	}
+
 });
