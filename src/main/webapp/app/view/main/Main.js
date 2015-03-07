@@ -15,6 +15,14 @@ Ext.define('asms3.view.main.Main', {
 		type : 'border'
 	},
 
+	style : {
+		background : '#ffffff',
+		backgroundImage : 'url(resources/background/bg6.jpg)',
+		backgroundSize : '100% 100%',
+		backgroundRepeat : 'no-repeat',
+		backgroundPosition : 'bottom left'
+	},
+	
 	items : [ {
 		region : 'north',
 		xtype : 'asms3header'

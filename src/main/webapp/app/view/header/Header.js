@@ -7,6 +7,10 @@ Ext.define('asms3.view.header.Header', {
 	xtype : 'asms3header',
 	controller : 'asms3header',
 	viewModel : 'asms3header',
+	
+	style : {
+		backgroundColor : '#00208B'
+	},
 
 	tbar : [ {
 		// xtype: 'button', // default for Toolbars
