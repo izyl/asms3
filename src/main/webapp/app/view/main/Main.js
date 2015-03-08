@@ -17,7 +17,7 @@ Ext.define('asms3.view.main.Main', {
 
 	style : {
 		background : '#ffffff',
-		backgroundImage : 'url(resources/background/bg6.jpg)',
+		backgroundImage : 'url(resources/background/bg1.jpg)',
 		backgroundSize : '100% 100%',
 		backgroundRepeat : 'no-repeat',
 		backgroundPosition : 'bottom left'

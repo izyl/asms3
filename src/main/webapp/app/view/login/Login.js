@@ -13,8 +13,6 @@ Ext.define('asms3.view.login.Login', {
 	title : 'Login to ASMS 3',
 	closable : false,
 
-	cls : 'login',
-
 	items : {
 		xtype : 'form',
 		reference : 'form',
