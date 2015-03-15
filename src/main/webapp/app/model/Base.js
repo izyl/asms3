@@ -4,9 +4,12 @@
 Ext.define('asms3.model.Base', {
 	extend : 'Ext.data.Model',
 
-	fields : [],
+	fields : [ {
+		name : 'id',
+		type : 'int'
+	} ],
 
 	schema : {
-		namespace : 'asms3.model'
+		namespace : 'asms3.model',
 	}
 });

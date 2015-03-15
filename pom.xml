@@ -174,6 +174,7 @@
 										<x-sencha-command dir="${webapp}/packages/${sencha.asms3.theme}">
 											package
 											build
+											-c 
 										</x-sencha-command>
 									</target>
 								</configuration>

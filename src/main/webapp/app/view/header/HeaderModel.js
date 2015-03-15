@@ -6,6 +6,12 @@ Ext.define('asms3.view.header.HeaderModel', {
 	// other
 	// in a real app.
 	data : {
-		username : 'Don'
+		user : {
+			lastName : 'Brooks',
+			firstName : 'Toby',
+			qualifs : [ {
+				name : 'ns surveyor'
+			} ]
+		}
 	}
 });

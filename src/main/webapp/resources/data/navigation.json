@@ -3,20 +3,60 @@
         expanded: true,
         children: [
             {
-                text: 'Child 1',
+                text: 'Job definition',
                 leaf: true
             },
             {
-                text: 'Child 2',
+                text: 'Timesheet',
                 leaf: true
             },
             {
-                text: 'Child 3',
+                text: 'Staff',
+                leaf: true
+            },
+            {
+                text: 'Comments',
+                leaf: true,
+                children: [
+                    {
+                        text: 'Ballast n°3 problems',
+                        leaf: true
+                    },
+                    {
+                        text: 'Deck things to do',
+                        leaf: true
+                    }
+                ]
+            },
+            {
+                text: 'Documents',
                 expanded: true,
                 children: [
                     {
-                        text: 'Grandchild',
-                        leaf: true
+                        text: 'Reports',
+		                children: [
+		                    {
+		                        text: 'Report 1.doc',
+		                        leaf: true
+		                    },
+		                    {
+		                        text: 'Survey report 1.doc',
+		                        leaf: true
+		                    }
+               			 ]
+                    },
+                    {
+                     text: 'Attachments',
+		                children: [
+		                    {
+		                        text: 'Attachment 1.doc',
+		                        leaf: true
+		                    },
+		                    {
+		                        text: 'letter.doc',
+		                        leaf: true
+		                    }
+               			 ]
                     }
                 ]
             }

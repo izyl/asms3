@@ -22,17 +22,20 @@ Ext.define('asms3.view.main.Main', {
 		backgroundRepeat : 'no-repeat',
 		backgroundPosition : 'bottom left'
 	},
-	
+
 	items : [ {
 		region : 'north',
-		xtype : 'asms3header'
+		xtype : 'asms3header',
+		listeners : {
+			newJobNs : 'onNewJobNs'
+		}
 
 	}, {
-		xtype : 'navigation',
-		autoShow : true,
-		x : 0
+		xtype : 'user'
+	}, {
+		reference : 'jobNsWizard',
+		xtype : 'jobwizard'
 	} ],
 
-	ui : 'highlight',
 	bodyCls : 'content-panel-body'
 });

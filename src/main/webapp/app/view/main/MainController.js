@@ -13,9 +13,14 @@ Ext.define('asms3.view.main.MainController', {
 		console.log('init main');
 	},
 
-	showView : function(viewId) {
+	onShowView : function(viewId) {
 		console.log('show view ' + viewId);
-		Ext.getCmp('test').show();
+		this.lookupReference(viewId).show();
+	},
+
+	onNewJobNs : function() {
+		console.log('showJobWizard');
+		this.lookupReference('jobNsWizard').show();
 	},
 
 	alias : 'controller.main'
