@@ -7,6 +7,8 @@ Ext.define('asms3.view.navigation.Navigation', {
 	viewModel : 'navigation',
 	frame : true,
 
+	resizable : true,
+	
 	height : 200,
 	width : 200,
 	layout : 'fit',

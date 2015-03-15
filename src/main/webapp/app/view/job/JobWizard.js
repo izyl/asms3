@@ -11,11 +11,8 @@ Ext.define('asms3.view.job.JobWizard', {
 	height : 600,
 	width : 800,
 	x : 400,
-	layout : {
-		type : 'border'
-	},
+	layout :'border',
 	closeAction : 'hide',
-	scrollable : true,
 
 	// As a Window the default property we are binding is "title":
 	bind : 'Create a new job',

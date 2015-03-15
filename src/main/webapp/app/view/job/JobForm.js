@@ -6,7 +6,8 @@ Ext.define('asms3.view.job.JobForm', {
 
 	// The form will submit an AJAX request to this URL when submitted
 	url : 'save-form.php',
-
+	scrollable : true,
+	
 	// Fields will be arranged vertically, stretched to full width
 	layout : 'anchor',
 	defaults : {
